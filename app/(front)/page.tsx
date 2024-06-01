@@ -1,4 +1,4 @@
-import ProductItem from '@/components/ProductItem'
+import ProductItem from '@/components/products/ProductItem'
 import data from '@/lib/data'
 
 export default function Home() {
