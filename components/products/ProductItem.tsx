@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 function ProductItem({ product }: { product: Product }) {
+  // console.log(product, 'itproem')
   return (
     <div className="card bg-base-300 shadow-xl mb-4">
       <figure>

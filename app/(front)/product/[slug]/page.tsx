@@ -1,10 +1,27 @@
 import AddToCart from '@/components/products/AddToCart'
-import data from '@/lib/data'
+import { Product } from '@/lib/models/ProductModel'
+import ProductService from '@/lib/services/productService'
+import { convertDocToObj } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
-function ProductPage({ params }: { params: { slug: string } }) {
-  const product = data.products.find((product) => product.slug === params.slug)
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}) {
+  const product = await ProductService.getBySlug(params.slug)
+  if (!product) {
+    return { title: 'product not found' }
+  }
+  return {
+    title: product.name,
+    description: product.description,
+  }
+}
+
+async function ProductPage({ params }: { params: { slug: string } }) {
+  const product = await ProductService.getBySlug(params.slug)
   if (!product) {
     return <div>product not found</div>
   }
@@ -64,7 +81,12 @@ function ProductPage({ params }: { params: { slug: string } }) {
                 {product.countInStock > 0 && (
                   <div className="card-actions justify-between">
                     <AddToCart
-                      item={{ ...product, qty: 1, color: '', size: '' }}
+                      item={{
+                        ...convertDocToObj(product),
+                        qty: 1,
+                        color: '',
+                        size: '',
+                      }}
                     />
                   </div>
                 )}

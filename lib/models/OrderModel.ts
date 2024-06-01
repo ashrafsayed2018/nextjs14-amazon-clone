@@ -1,3 +1,5 @@
+import mongoose from 'mongoose'
+
 export type OrderItem = {
   name: string
   slug: string

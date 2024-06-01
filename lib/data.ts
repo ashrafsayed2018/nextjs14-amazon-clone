@@ -1,8 +1,22 @@
+import bcrypt from 'bcryptjs'
 const data = {
+  users: [
+    {
+      name: 'admin',
+      email: 'admin@gmail.com',
+      password: bcrypt.hashSync('password'),
+      isAdmin: true,
+    },
+    {
+      name: 'user',
+      email: 'user@gmail.com',
+      password: bcrypt.hashSync('password'),
+      isAdmin: false,
+    },
+  ],
   products: [
     // choose random product image and banner from the internet
     {
-      _id: '1',
       name: 'Free Shirt',
       slug: 'free-shirt',
       image: 'https://i.ibb.co/xJS0T3Y/Blue-Shirt.png',
@@ -17,7 +31,6 @@ const data = {
       isFeatured: true,
     },
     {
-      _id: '2',
       name: 'Fit Shirt',
       slug: 'fit-shirt',
       image: 'https://i.ibb.co/55z32tw/Black-Shirt.png',
@@ -32,7 +45,6 @@ const data = {
       isFeatured: true,
     },
     {
-      _id: '3',
       name: 'Slim Shirt',
       slug: 'slim-shirt',
       image: 'https://i.ibb.co/0s3pdnc/Tan-Shirt.png',
@@ -47,7 +59,6 @@ const data = {
       isFeatured: true,
     },
     {
-      _id: '4',
       name: 'Golf Pants',
       slug: 'golf-pants',
       image: 'https://i.ibb.co/0s3pdnc/Tan-Pants.png',
@@ -62,7 +73,6 @@ const data = {
       isFeatured: true,
     },
     {
-      _id: '5',
       name: 'Fit Pants',
       slug: 'fit-pants',
       image: 'https://i.ibb.co/Mhh6wBg/Black-Pants.png',
@@ -77,7 +87,6 @@ const data = {
       isFeatured: true,
     },
     {
-      _id: '6',
       name: 'Slim Pants',
       slug: 'slim-pants',
       image: 'https://i.ibb.co/Mhh6wBg/Black-Pants.png',
