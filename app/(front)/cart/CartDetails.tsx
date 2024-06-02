@@ -91,7 +91,7 @@ function CartDetails() {
                   </li>
                   <li>
                     <button
-                      onClick={() => router.push('/signin')}
+                      onClick={() => router.push('/shipping')}
                       className="w-full btn btn-primary"
                     >
                       proceed to checkout
