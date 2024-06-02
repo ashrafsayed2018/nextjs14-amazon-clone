@@ -1,5 +1,6 @@
 'use client'
 import { signIn, useSession } from 'next-auth/react'
+import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
@@ -103,6 +104,12 @@ function Form() {
             </button>
           </div>
         </form>
+        <div>
+          Dont have an account?{' '}
+          <Link className="link" href={`/register?callbackUrl=${callbackUrl}`}>
+            register
+          </Link>
+        </div>
       </div>
     </div>
   )
