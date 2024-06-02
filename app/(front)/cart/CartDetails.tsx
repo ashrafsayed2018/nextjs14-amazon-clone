@@ -91,10 +91,10 @@ function CartDetails() {
                   </li>
                   <li>
                     <button
-                      onClick={() => router.push('/checkout')}
+                      onClick={() => router.push('/signin')}
                       className="w-full btn btn-primary"
                     >
-                      process to checkout
+                      proceed to checkout
                     </button>
                   </li>
                 </ul>
